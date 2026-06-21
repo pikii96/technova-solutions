@@ -71,14 +71,14 @@ Skripte sadrže nekoliko hardkodiranih vrijednosti koje **morate izmijeniti** pr
 
 ### 1. `TechNova-Student-v2.2.2.ps1` (deploy skripta)
 
-| Linija | Varijabla | Trenutna vrijednost | Promijeniti u |
+| Linija | Varijabla | Promijeniti u |
 | --- | --- | --- |
 | 29 | `$subId` | **Vaš Azure Subscription ID** |
 | 57 | `$alertEmail` | `"student@algebra.hr"` | **Vaša e-mail adresa** (za alert obavijesti) |
 
 ### 2. `Cleanup-TechNova-v2.2.ps1` (cleanup skripta)
 
-| Linija | Varijabla | Trenutna vrijednost | Promijeniti u |
+| Linija | Varijabla | Promijeniti u |
 | --- | --- | --- |
 | 19 | `$subId` | **Isti Subscription ID** kao u deploy skripti |
 
@@ -225,7 +225,7 @@ Sljedeće značajke **nisu implementirane skriptom** jer zahtijevaju premium lic
 Nakon testiranja, pokrenite cleanup skriptu kako biste izbjegli daljnje troškove i oslobodili kvote:
 
 ```powershell
-./Cleanup-TechNova-v2.2.ps1
+./Cleanup-TechNova.ps1
 ```
 
 Skripta traži eksplicitnu potvrdu (`BRISI`) prije bilo kakvog brisanja. Briše:
@@ -252,32 +252,6 @@ Skripta traži eksplicitnu potvrdu (`BRISI`) prije bilo kakvog brisanja. Briše:
 └── assets/
     └── architecture_diagram.png       # Visokorazinski arhitekturni dijagram
 ```
-
----
-
-## Procjena troška
-
-Mjesečni trošak realiziranog rješenja na Azure for Students pretplati:
-
-| Stanje | Mjesečni trošak | Trajanje $100 kredita |
-| --- | --- | --- |
-| Aktivan AKS | ~$75 / mj | ~1.3 mjeseca |
-| **Zaustavljen AKS** (`az aks stop`) | ~$45 / mj | ~2.2 mjeseca |
-
-> **Preporuka:** Nakon demo-a i testiranja, zaustavite AKS naredbom `az aks stop --name technova-aks-prod --resource-group TechNova-RG` kako biste produžili trajanje kredita.
-
----
-
-## Verzije skripti
-
-| Verzija | Promjene |
-| --- | --- |
-| **2.2.2** | Production-ready: Entra ID retry logika (AAD replication delay), VNet Flow Logs migracija (NSG Flow Logs deprecated od 30.6.2025.), Availability alert fix (avg umjesto max, scope na App Insights) |
-| 2.2.1 | Hard-fail session check + sinkronizacija Az PS i az CLI |
-| 2.2 | NSG Flow Logs (kasnije migrirano u 2.2.2) |
-
-Detalji o promjenama nalaze se u headeru `TechNova-Student-v2.2.2.ps1`.
-
 ---
 
 **Autor:** Marin Pavlović
