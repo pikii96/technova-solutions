@@ -71,16 +71,16 @@ Skripte sadrže nekoliko hardkodiranih vrijednosti koje **morate izmijeniti** pr
 
 ### 1. `Deploy-TechNova.ps1` (deploy skripta)
 
-| Linija | Varijabla | Promijeniti u |
-| --- | --- | --- |
-| 29 | `$subId` | **Vaš Azure Subscription ID** |
-| 57 | `$alertEmail` | `"student@algebra.hr"` | **Vaša e-mail adresa** (za alert obavijesti) |
+| Varijabla | Promijeniti u |
+| --- | --- |
+| `$subId` | **Vaš Azure Subscription ID** |
+| `$alertEmail` | `"student@algebra.hr"` | **Vaša e-mail adresa** (za alert obavijesti) |
 
 ### 2. `Cleanup-TechNova.ps1` (cleanup skripta)
 
-| Linija | Varijabla | Promijeniti u |
-| --- | --- | --- |
-| 19 | `$subId` | **Isti Subscription ID** kao u deploy skripti |
+| Varijabla | Promijeniti u |
+| --- | --- |
+| `$subId` | **Isti Subscription ID** kao u deploy skripti |
 
 ### Opcionalno — regija
 
