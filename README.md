@@ -127,7 +127,7 @@ cd technova-solutions
 
 ### Korak 2 — Konfiguracija
 
-Otvorite `TechNova-Student-v2.2.2.ps1` u editoru i promijenite vrijednosti `$subId` i `$alertEmail` (vidi sekciju **Konfiguracija** iznad). Isto napravite za `Cleanup-TechNova-v2.2.ps1` (samo `$subId`).
+Otvorite `Deploy-TechNova.ps1` u editoru i promijenite vrijednosti `$subId` i `$alertEmail` (vidi sekciju **Konfiguracija** iznad). Isto napravite za `Cleanup-TechNova.ps1` (samo `$subId`).
 
 ### Korak 3 — Login u Azure
 
@@ -145,7 +145,7 @@ Get-AzContext | Format-List Name, Subscription, Tenant
 ### Korak 4 — Pokretanje deploymenta
 
 ```powershell
-./TechNova-Student-v2.2.2.ps1
+./Deploy-TechNova.ps1
 ```
 
 **Trajanje:** 15-20 minuta.
@@ -247,7 +247,7 @@ Skripta traži eksplicitnu potvrdu (`BRISI`) prije bilo kakvog brisanja. Briše:
 ```
 .
 ├── README.md                           # Ova datoteka
-├── Deploy- TechNova.ps1                # Glavna deployment skripta (13 koraka)
+├── Deploy-TechNova.ps1                 # Glavna deployment skripta (13 koraka)
 ├── Cleanup-TechNova.ps1                # Skripta za čišćenje okruženja
 └── assets/
     └── architecture_diagram.png       # Visokorazinski arhitekturni dijagram
