@@ -1,0 +1,24 @@
+# Deployment logs (mogu sadržavati subscription ID i druge identifikatore)
+TechNova-deploy-*.log
+TechNova-cleanup-*.log
+*.log
+
+# Debug i temp datoteke
+technova-debug.txt
+*.tmp
+*.bak
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Lokalne kopije skripti
+*-local.ps1
+*-backup.ps1
+
+# Eventualne lokalne konfiguracijske datoteke
+config.local.ps1
+secrets.ps1
+.env
