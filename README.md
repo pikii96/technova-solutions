@@ -208,8 +208,8 @@ Workbook KQL upiti zahtijevaju ingestiranu telemetriju. Nakon deploymenta priče
 
 Sljedeće značajke **nisu implementirane skriptom** jer zahtijevaju premium licence izvan opsega Azure for Students pretplate. Sve su dokumentirane u PDF-u kao arhitekturne preporuke za produkcijsku implementaciju:
 
-| Značajka | Razlog | Status |
-| --- | --- | --- |
+| Značajka | Razlog |
+| --- | --- |
 | **Conditional Access** (HR geo-block) | Zahtijeva AAD Premium P1 |
 | **Privileged Identity Management (PIM)** | Zahtijeva AAD P2 |
 | **Just-In-Time VM Access** | Zahtijeva Defender for Cloud Standard |
