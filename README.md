@@ -69,14 +69,14 @@ Get-Module -ListAvailable Az.Accounts | Select-Object Version -First 1
 
 Skripte sadrže nekoliko hardkodiranih vrijednosti koje **morate izmijeniti** prije pokretanja. Otvorite skripte u editoru (VS Code preporučen) i promijenite:
 
-### 1. `TechNova-Student-v2.2.2.ps1` (deploy skripta)
+### 1. `Deploy-TechNova.ps1` (deploy skripta)
 
 | Linija | Varijabla | Promijeniti u |
 | --- | --- | --- |
 | 29 | `$subId` | **Vaš Azure Subscription ID** |
 | 57 | `$alertEmail` | `"student@algebra.hr"` | **Vaša e-mail adresa** (za alert obavijesti) |
 
-### 2. `Cleanup-TechNova-v2.2.ps1` (cleanup skripta)
+### 2. `Cleanup-TechNova.ps1` (cleanup skripta)
 
 | Linija | Varijabla | Promijeniti u |
 | --- | --- | --- |
@@ -204,17 +204,17 @@ Workbook KQL upiti zahtijevaju ingestiranu telemetriju. Nakon deploymenta priče
 
 ---
 
-## ⚠️ Sigurnosne napomene — ograničenja studentske pretplate
+## Sigurnosne napomene — ograničenja studentske pretplate
 
 Sljedeće značajke **nisu implementirane skriptom** jer zahtijevaju premium licence izvan opsega Azure for Students pretplate. Sve su dokumentirane u PDF-u kao arhitekturne preporuke za produkcijsku implementaciju:
 
 | Značajka | Razlog | Status |
 | --- | --- | --- |
-| **Conditional Access** (HR geo-block) | Zahtijeva AAD Premium P1 | Dokumentirano kao preporuka |
-| **Privileged Identity Management (PIM)** | Zahtijeva AAD P2 | Dokumentirano kao preporuka |
-| **Just-In-Time VM Access** | Zahtijeva Defender for Cloud Standard | Dokumentirano kao preporuka |
-| **Auto-scale za App Service** | Zahtijeva Standard S1+ tier | Dokumentirano kao preporuka |
-| **Application Gateway s WAF** | ~$180/mj — izvan studentskog budžeta | Dokumentirano kao preporuka |
+| **Conditional Access** (HR geo-block) | Zahtijeva AAD Premium P1 |
+| **Privileged Identity Management (PIM)** | Zahtijeva AAD P2 |
+| **Just-In-Time VM Access** | Zahtijeva Defender for Cloud Standard |
+| **Auto-scale za App Service** | Zahtijeva Standard S1+ tier |
+| **Application Gateway s WAF** | Izvan studentskog budžeta |
 
 **MFA** je implementiran kroz **Security Defaults** (besplatno, bez AAD P1).
 
@@ -246,9 +246,9 @@ Skripta traži eksplicitnu potvrdu (`BRISI`) prije bilo kakvog brisanja. Briše:
 
 ```
 .
-├── README.md                          # Ova datoteka
-├── TechNova-Student-v2.2.2.ps1        # Glavna deployment skripta (13 koraka)
-├── Cleanup-TechNova-v2.2.ps1          # Skripta za čišćenje okruženja
+├── README.md                           # Ova datoteka
+├── Deploy- TechNova.ps1                # Glavna deployment skripta (13 koraka)
+├── Cleanup-TechNova.ps1                # Skripta za čišćenje okruženja
 └── assets/
     └── architecture_diagram.png       # Visokorazinski arhitekturni dijagram
 ```
